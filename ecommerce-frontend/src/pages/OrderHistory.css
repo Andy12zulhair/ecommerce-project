@@ -1,0 +1,93 @@
+.history-container {
+    padding-top: 120px;
+    /* Fix navbar overlap */
+    padding-bottom: 80px;
+}
+
+.history-title {
+    font-family: var(--font-heading);
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.order-card-dark {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.order-card-dark:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.order-header {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 15px 20px;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-id {
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.order-date {
+    font-family: var(--font-mono);
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.order-status-badge {
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 5px rgba(0, 243, 255, 0.1);
+}
+
+.order-status-badge.completed {
+    border-color: #00ff88;
+    color: #00ff88;
+    box-shadow: 0 0 5px rgba(0, 255, 136, 0.1);
+}
+
+.order-items-list .list-group-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: #d0d0d0;
+    padding: 15px 20px;
+    font-family: var(--font-body);
+}
+
+.order-items-list .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.order-footer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px 20px;
+    border-top: 1px solid #222;
+    text-align: right;
+    font-family: var(--font-heading);
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}

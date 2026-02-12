@@ -1,0 +1,196 @@
+/* src/pages/Auth.css */
+
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--color-bg);
+    overflow-x: hidden;
+}
+
+/* LEFT SIDE - IMAGE & SLOGAN */
+.auth-left {
+    flex: 1.2;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+}
+
+.auth-slogan-box {
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+}
+
+.auth-illustration {
+    max-width: 300px;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 10px var(--color-accent));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* RIGHT SIDE - FORM */
+.auth-right {
+    flex: 0.8;
+    background-color: #080808;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    position: relative;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* WAVE EFFECT DIVIDER */
+/* We use a pseudo-element on the right panel to create the curve that overlaps the left */
+.auth-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100px;
+    /* Width of the wave */
+    width: 101px;
+    background-color: #080808;
+    /* Create a wave shape. This is a simple S-curve */
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    /* For a smoother curve like the reference, we can use an SVG background image instead. 
+       Let's try a CSS border-radius trick for a curve */
+    clip-path: none;
+    background: transparent;
+}
+
+/* Alternative Wave using SVG background on the Right Panel's edge */
+.auth-right {
+    background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%23080808" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"%3E%3C/path%3E%3C/svg%3E');
+    /* This SVG approach is tricky for vertical split. Let's use simple border-radius for the 'Curved Side' look */
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: -50px;
+    /* Overlap */
+    z-index: 10;
+}
+
+/* Override the SVG attempt above with the reference style 'Curve' */
+.auth-right {
+    background-color: #050505;
+    background-image: none;
+    border-radius: 0;
+    margin-left: 0;
+
+    /* The big curve logic */
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    /* Note: simplified angle. For a true Bezier curve like the image, SVG is best, but this polygon gives a sharp tech angle which fits MAROS perfectly. */
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-left {
+        flex: 0.3;
+        padding: 2rem;
+    }
+
+    .auth-right {
+        clip-path: none;
+        flex: 0.7;
+    }
+}
+
+/* FORM STYLING */
+.form-control-dark {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: white !important;
+    font-family: var(--font-mono) !important;
+    padding: 12px 15px !important;
+    border-radius: 8px !important;
+    /* Slightly rounded per reference */
+}
+
+.form-control-dark:focus {
+    border-color: var(--color-accent) !important;
+    box-shadow: 0 0 0 2px rgba(0, 243, 255, 0.2) !important;
+}
+
+.btn-auth {
+    background-color: #e0e0e0;
+    /* Light button like reference */
+    color: black;
+    border-radius: 50px;
+    /* Pill shape */
+    font-weight: bold;
+    font-family: var(--font-body);
+    padding: 12px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-auth:hover {
+    background-color: var(--color-accent);
+    box-shadow: 0 0 15px var(--color-accent);
+    color: black;
+}
+
+.social-btn {
+    background-color: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.social-btn:hover {
+    border-color: white;
+    color: white;
+}
+
+.auth-header {
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    color: white;
+    font-size: 2rem;
+}
+
+.auth-sub {
+    color: #666;
+    font-family: var(--font-body);
+}
+
+.auth-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}

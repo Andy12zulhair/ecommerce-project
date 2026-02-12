@@ -1,0 +1,110 @@
+.checkout-container {
+    padding-top: 120px;
+    /* Fix navbar overlap */
+    padding-bottom: 80px;
+}
+
+.checkout-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+/* Glass Card Style */
+.glass-checkout-card {
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.glass-checkout-card h4,
+.glass-checkout-card .card-title {
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.glass-checkout-card label {
+    color: #aaa;
+    font-family: var(--font-mono);
+    margin-bottom: 0.5rem;
+}
+
+/* Summary List Overrides */
+.list-group-item.checkout-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    font-family: var(--font-mono);
+    padding: 1rem 0;
+}
+
+.list-group-item.checkout-total {
+    background: transparent;
+    border: none;
+    border-top: 2px solid var(--color-accent);
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+    margin-top: 1rem;
+}
+
+/* Pay Button */
+.btn-pay {
+    background: linear-gradient(45deg, var(--color-accent), #00a8ff);
+    border: none;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    border-radius: 4px;
+    /* Slight roundness */
+}
+
+.btn-pay:hover:not(:disabled) {
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.6);
+    transform: scale(1.02);
+    color: #fff;
+}
+
+.btn-pay:disabled {
+    background: #333;
+    color: #666;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Step Indicator (Optional) */
+.checkout-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    font-family: var(--font-mono);
+    color: #555;
+}
+
+.step {
+    padding: 0 1rem;
+    position: relative;
+}
+
+.step.active {
+    color: var(--color-accent);
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--color-accent);
+}
